@@ -4,13 +4,13 @@ import serial
 import requests
 from datetime import datetime, timedelta
 
-# Set the serial port to the same serial port you uploaded the arduino sketch to
-# In the Arduino IDE, click "Tools > Serial Port"
-# SERIAL_PORT = "/dev/tty.usbserial-A70064Mh"
+# Set the serial ports to yours 
+
 SERIAL_PORT = "/dev/tty.usbserial-AH00PP05"
 SERIAL_BAUD = 115200
 
 # Don"t send more than one message every 30 minutes
+
 SENSOR_INTERVAL = timedelta(minutes=30)
 
 SMS_FROM = "" # Make sure this is a number on telapi.com or you'll get charged extra for spoofing
@@ -19,15 +19,15 @@ SMS_BODY = "ALERT! Your Arduino just detected motion!"
 TELAPI_ACCOUNT_SID = ""
 TELAPI_TOKEN = ""
 
-# Try to import TELAPI_ACCOUNT_SID and such from settings_local.py, if it exists
 try:
     from settings_local import *
 except ImportError:
     pass
 
-TELAPI_SMS_URL = "https://api.telapi.com/2011-07-01/Accounts/%s/SMS/Messages" % TELAPI_ACCOUNT_SID
+TELAPI_SMS_URL = "your API" % TELAPI_ACCOUNT_SID
 
 # Start the server
+
 if __name__ == "__main__":
     print "Starting SMS motion detector server at", datetime.now()
     last_sent_time = None
