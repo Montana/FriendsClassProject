@@ -3,3 +3,5 @@ Class projected I did for a friend, that sends an SMS when motion is detected vi
 
 <pre>chmod u+x classproject.py
 python classproject.py</pre>
+
+The only issues I've had are the intervals of when the SMS's are sent, but I'm fixing this. Some of this code is about ~2 years old, with some updated code from myself. This should work with almost any Arduino. 
